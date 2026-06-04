@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Jun 03, 2026 at 11:14 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Jun 04, 2026 at 01:39 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,16 @@ CREATE TABLE `contact_messages` (
   `subject` varchar(255) NOT NULL,
   `message` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact_messages`
+--
+
+INSERT INTO `contact_messages` (`id`, `fullname`, `email`, `subject`, `message`, `created_at`) VALUES
+(1, 'Ali', 'ali12@gmail.com', 'Great Website Experience', 'I really enjoyed browsing your website. The design is clean, easy to navigate, and the information is well organized. Keep up the great work!', '2026-06-04 11:00:32'),
+(2, 'Ahmed', 'ahmed@gmail.com', 'Feature Suggestion', 'Your service is impressive, but it would be even better if you added a live chat option for faster customer support. Looking forward to future updates.', '2026-06-04 11:01:17'),
+(3, 'Khan', 'khan@gmail.com', 'Positive Customer Feedback', 'I had a wonderful experience using your services. The team was professional, responsive, and helpful throughout the process. Thank you for the excellent support!', '2026-06-04 11:02:06');
 
 -- --------------------------------------------------------
 
@@ -54,18 +63,18 @@ CREATE TABLE `music` (
   `music_file` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `music`
 --
 
 INSERT INTO `music` (`id`, `title`, `artist`, `album`, `genre`, `language`, `year`, `image`, `music_file`, `description`, `created_at`) VALUES
-(1, 'Shikayat', 'AUR', 'Shikayat', 'Sad Pop', 'Urdu', '2023', 'musicimg5.png', 'Shikayat .mp3', '“Shikayat” is an emotional Urdu song by AUR. The song features heartfelt lyrics, calm music, and a soulful vibe that connects deeply with listeners.', '2026-05-23 11:45:01'),
-(2, 'Night Changes', 'One Direction', 'Four', 'Pop Rock', 'English', '2014', 'musicimg4.png', 'Night Changes.mp3', '“Night Changes” is a popular song by One Direction. The song talks about growing up, memories, and life changes with emotional lyrics and relaxing music.', '2026-05-25 15:08:32'),
-(3, 'Perfect', 'Ed Sheeran', 'Divide', 'Pop', 'English', '2017', 'musicimg3.png', 'Perfect.mp3', '“Perfect” is a romantic English song by Ed Sheeran from the album Divide. The song is famous for its emotional lyrics, soft melody, and beautiful love story theme.', '2026-05-25 15:15:16'),
-(4, 'Tu Hai Kahan', 'AUR', 'Tu Hai Kahan', 'Pop', 'Urdu', '2023', 'musicimg2.png', 'Tu Hai Kahan.mp3', '“Tu Hai Kahan” is a popular Urdu song by AUR. The song became viral because of its emotional lyrics, soft vocals, and relaxing music vibe loved by young listeners.', '2026-05-25 15:17:10'),
-(5, 'Kahani Suno', 'Kaifi Khalil', 'Kahani Suno 2.0', 'Sad Pop', 'Urdu', '2018', 'musicimg1.png', 'Kahani Suno.mp3', '“Kahani Suno 2.0” is a soulful Urdu song by Kaifi Khalil. The song expresses emotions of love, heartbreak, and memories through soft vocals and relaxing music.', '2026-06-01 19:09:45');
+(1, 'Shikayat', 'AUR', 'Shikayat', 'Sad Pop', 'Urdu', 2023, 'musicimg5.png', 'Shikayat .mp3', '“Shikayat” is an emotional Urdu song by AUR. The song features heartfelt lyrics, calm music, and a soulful vibe that connects deeply with listeners.', '2026-05-23 11:45:01'),
+(2, 'Night Changes', 'One Direction', 'Four', 'Pop Rock', 'English', 2014, 'musicimg4.png', 'Night Changes.mp3', '“Night Changes” is a popular song by One Direction. The song talks about growing up, memories, and life changes with emotional lyrics and relaxing music.', '2026-05-25 15:08:32'),
+(3, 'Perfect', 'Ed Sheeran', 'Divide', 'Pop', 'English', 2017, 'musicimg3.png', 'Perfect.mp3', '“Perfect” is a romantic English song by Ed Sheeran from the album Divide. The song is famous for its emotional lyrics, soft melody, and beautiful love story theme.', '2026-05-25 15:15:16'),
+(4, 'Tu Hai Kahan', 'AUR', 'Tu Hai Kahan', 'Pop', 'Urdu', 2023, 'musicimg2.png', 'Tu Hai Kahan.mp3', '“Tu Hai Kahan” is a popular Urdu song by AUR. The song became viral because of its emotional lyrics, soft vocals, and relaxing music vibe loved by young listeners.', '2026-05-25 15:17:10'),
+(5, 'Kahani Suno', 'Kaifi Khalil', 'Kahani Suno 2.0', 'Sad Pop', 'Urdu', 2018, 'musicimg1.png', 'Kahani Suno.mp3', '“Kahani Suno 2.0” is a soulful Urdu song by Kaifi Khalil. The song expresses emotions of love, heartbreak, and memories through soft vocals and relaxing music.', '2026-06-01 19:09:45');
 
 -- --------------------------------------------------------
 
@@ -81,7 +90,7 @@ CREATE TABLE `reviews` (
   `rating` int(11) NOT NULL,
   `review` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -96,7 +105,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `role` enum('admin','user') DEFAULT 'user',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -126,18 +135,18 @@ CREATE TABLE `videos` (
   `video_file` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `videos`
 --
 
 INSERT INTO `videos` (`id`, `title`, `artist`, `album`, `genre`, `language`, `year`, `image`, `video_file`, `description`, `created_at`) VALUES
-(1, 'Shikayat', 'AUR', 'Shikayat', 'Sad Pop', 'Urdu', '2023', 'musicimg5.png', 'Shikayat.mp4', '“Shikayat” is an emotional Urdu song by AUR. The song features heartfelt lyrics, calm music, and a soulful vibe that connects deeply with listeners.', '2026-05-29 13:11:43'),
-(2, 'Night Changes', 'One Direction', 'Four', 'Pop Rock', 'English', '2014', 'musicimg4.png', 'Night Changes.mp4', '“Night Changes” is a popular song by One Direction. The song talks about growing up, memories, and life changes with emotional lyrics and relaxing music.', '2026-05-29 13:16:05'),
-(3, 'Perfect', 'Ed Sheeran', 'Divide', 'Pop', 'English', '2017', 'musicimg3.png', 'perfect.mp4', '“Perfect” is a romantic English song by Ed Sheeran from the album Divide. The song is famous for its emotional lyrics, soft melody, and beautiful love story theme.', '2026-05-29 13:19:07'),
-(4, 'Tu Hai Kahan', 'AUR', 'Tu Hai Kahan', 'Pop', 'Urdu', '2023', 'musicimg2.png', 'Tu Hai Kahan.mp4', '“Tu Hai Kahan” is a popular Urdu song by AUR. The song became viral because of its emotional lyrics, soft vocals, and relaxing music vibe loved by young listeners.', '2026-05-29 13:22:19'),
-(5, 'Kahani Suno', 'Kaifi Khalil', 'Kahani Suno 2.0', 'Sad Pop', 'Urdu', '2021', 'musicimg1.png', 'Kahani Suno.mp4', '“Kahani Suno 2.0” is a soulful Urdu song by Kaifi Khalil. The song expresses emotions of love, heartbreak, and memories through soft vocals and relaxing music.', '2026-05-29 13:24:31');
+(1, 'Shikayat', 'AUR', 'Shikayat', 'Sad Pop', 'Urdu', 2023, 'musicimg5.png', 'Shikayat.mp4', '“Shikayat” is an emotional Urdu song by AUR. The song features heartfelt lyrics, calm music, and a soulful vibe that connects deeply with listeners.', '2026-05-29 13:11:43'),
+(2, 'Night Changes', 'One Direction', 'Four', 'Pop Rock', 'English', 2014, 'musicimg4.png', 'Night Changes.mp4', '“Night Changes” is a popular song by One Direction. The song talks about growing up, memories, and life changes with emotional lyrics and relaxing music.', '2026-05-29 13:16:05'),
+(3, 'Perfect', 'Ed Sheeran', 'Divide', 'Pop', 'English', 2017, 'musicimg3.png', 'perfect.mp4', '“Perfect” is a romantic English song by Ed Sheeran from the album Divide. The song is famous for its emotional lyrics, soft melody, and beautiful love story theme.', '2026-05-29 13:19:07'),
+(4, 'Tu Hai Kahan', 'AUR', 'Tu Hai Kahan', 'Pop', 'Urdu', 2023, 'musicimg2.png', 'Tu Hai Kahan.mp4', '“Tu Hai Kahan” is a popular Urdu song by AUR. The song became viral because of its emotional lyrics, soft vocals, and relaxing music vibe loved by young listeners.', '2026-05-29 13:22:19'),
+(5, 'Kahani Suno', 'Kaifi Khalil', 'Kahani Suno 2.0', 'Sad Pop', 'Urdu', 2021, 'musicimg1.png', 'Kahani Suno.mp4', '“Kahani Suno 2.0” is a soulful Urdu song by Kaifi Khalil. The song expresses emotions of love, heartbreak, and memories through soft vocals and relaxing music.', '2026-05-29 13:24:31');
 
 --
 -- Indexes for dumped tables
