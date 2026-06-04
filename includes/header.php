@@ -42,7 +42,7 @@ include("./includes/config.php");
     <nav class="navbar navbar-expand-xl navbar-dark py-3 custom-navbar">
         <section class="container">
 
-            <a class="navbar-brand" href="#">SOUND GROUP</a>
+            <a class="navbar-brand" href="/soundgroup">SOUND GROUP</a>
 
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
@@ -73,7 +73,7 @@ include("./includes/config.php");
                     </li>
 
                     <li class="nav-item">
-                        <a href="./soundgroup/contact.php" class="nav-link">Contact</a>
+                        <a href="/soundgroup/contact.php" class="nav-link">Contact</a>
                     </li>
 
                 </ul>

@@ -20,7 +20,7 @@ include("./includes/header.php");
         <h1>Unlimited Music & Videos</h1>
     </section>
     <p>Latest Songs & Entertainment Anytime</p>
-    <button class="btn btn-success btn-lg mt-3 px-5 explore-btn">Explore Now</button>
+    <a href="/soundgroup/musics.php"><button class="btn btn-success btn-lg mt-3 px-5 explore-btn">Explore Now</button></a>
 
 </section>
 
